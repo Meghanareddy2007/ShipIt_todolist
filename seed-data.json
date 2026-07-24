@@ -1,0 +1,146 @@
+[
+  {
+    "id": "t_1757318291233_rt55h",
+    "text": "Ship the momentum ring animation",
+    "completed": false,
+    "priority": "urgent",
+    "dueDate": "2026-07-24",
+    "createdAt": "2026-07-18T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1705375495884_o9zk2",
+    "text": "Fix Safari drag-and-drop bug",
+    "completed": false,
+    "priority": "urgent",
+    "dueDate": "2026-07-25",
+    "createdAt": "2026-07-19T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1774269899211_193uo",
+    "text": "Record 60-second demo video",
+    "completed": false,
+    "priority": "urgent",
+    "dueDate": "2026-07-26",
+    "createdAt": "2026-07-20T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1724410805296_2sxrh",
+    "text": "Write hackathon pitch deck",
+    "completed": false,
+    "priority": "routine",
+    "dueDate": "2026-07-27",
+    "createdAt": "2026-07-19T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1738804138316_84lp8",
+    "text": "User-test with 3 classmates",
+    "completed": false,
+    "priority": "routine",
+    "dueDate": "2026-07-26",
+    "createdAt": "2026-07-21T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1731718951618_0bbiq",
+    "text": "Follow up with mentor on scoring formula",
+    "completed": false,
+    "priority": "routine",
+    "dueDate": "2026-07-22",
+    "createdAt": "2026-07-18T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1754861414680_krojp",
+    "text": "Add confetti sound effect",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2026-07-31",
+    "createdAt": "2026-07-22T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1712417073202_s1a3s",
+    "text": "Refactor storage.js for export versioning",
+    "completed": false,
+    "priority": "low",
+    "dueDate": null,
+    "createdAt": "2026-07-23T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1709446618632_yes3x",
+    "text": "Submit to Devfolio before deadline",
+    "completed": false,
+    "priority": "urgent",
+    "dueDate": "2026-07-28",
+    "createdAt": "2026-07-23T09:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "t_1718912045278_l8ijz",
+    "text": "Design ShipIt logo + wordmark",
+    "completed": true,
+    "priority": "routine",
+    "dueDate": "2026-07-23",
+    "createdAt": "2026-07-17T09:00:00.000Z",
+    "completedAt": "2026-07-24T17:45:00.000Z"
+  },
+  {
+    "id": "t_1782747952828_gi6hb",
+    "text": "Wire up localStorage persistence",
+    "completed": true,
+    "priority": "urgent",
+    "dueDate": "2026-07-23",
+    "createdAt": "2026-07-17T09:00:00.000Z",
+    "completedAt": "2026-07-24T17:45:00.000Z"
+  },
+  {
+    "id": "t_1726668795903_0icta",
+    "text": "Build command palette (\u2318K)",
+    "completed": true,
+    "priority": "urgent",
+    "dueDate": "2026-07-22",
+    "createdAt": "2026-07-16T09:00:00.000Z",
+    "completedAt": "2026-07-23T17:45:00.000Z"
+  },
+  {
+    "id": "t_1723126965378_4hzb4",
+    "text": "Implement drag-and-drop reorder",
+    "completed": true,
+    "priority": "routine",
+    "dueDate": "2026-07-21",
+    "createdAt": "2026-07-15T09:00:00.000Z",
+    "completedAt": "2026-07-22T17:45:00.000Z"
+  },
+  {
+    "id": "t_1733580566876_7gaub",
+    "text": "Ship focus-mode Pomodoro timer",
+    "completed": true,
+    "priority": "routine",
+    "dueDate": "2026-07-21",
+    "createdAt": "2026-07-15T09:00:00.000Z",
+    "completedAt": "2026-07-22T17:45:00.000Z"
+  },
+  {
+    "id": "t_1706465811105_p39eo",
+    "text": "Set up GitHub repo + README badges",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2026-07-20",
+    "createdAt": "2026-07-14T09:00:00.000Z",
+    "completedAt": "2026-07-21T17:45:00.000Z"
+  },
+  {
+    "id": "t_1788194978547_h4mnf",
+    "text": "Sketch momentum score formula on whiteboard",
+    "completed": true,
+    "priority": "routine",
+    "dueDate": "2026-07-19",
+    "createdAt": "2026-07-13T09:00:00.000Z",
+    "completedAt": "2026-07-20T17:45:00.000Z"
+  }
+]

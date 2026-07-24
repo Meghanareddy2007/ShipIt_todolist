@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShipIt — Momentum for builders</title>
+<meta name="description" content="A task manager that scores urgency for you, rewards daily follow-through with streaks, and turns any task into a focus sprint.">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand__mark">S</div>
+      <span class="brand__name">ShipIt</span>
+      <span class="brand__badge">Hackathon Build</span>
+    </div>
+    <div class="topbar__actions">
+      <button class="kbd-hint" id="paletteTrigger" type="button">
+        Commands <kbd>⌘</kbd><kbd>K</kbd>
+      </button>
+      <button class="icon-toggle" id="modeToggle" type="button" aria-label="Switch to light mode">☀️</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero__eyebrow" id="dateline">—</div>
+    <h1 class="hero__title">Task lists don't tell you<br><span class="grad">what actually needs you today.</span></h1>
+    <p class="hero__sub">ShipIt scores every task's real urgency — priority blended with deadline pressure — so the momentum ring tells you what to do next, not just what's on the list.</p>
+  </div>
+
+  <section class="rail" aria-label="Your momentum">
+    <div class="stat">
+      <div class="stat__num" id="totalTasks">0</div>
+      <div class="stat__label">On the board</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num" id="activeTasks">0</div>
+      <div class="stat__label">In flight</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num"><span id="rateTasks">0</span><span class="unit">%</span></div>
+      <div class="stat__label">Ship rate</div>
+    </div>
+    <div class="stat stat--streak">
+      <div class="stat__num" id="streakTasks">0</div>
+      <div class="stat__label">Day streak</div>
+    </div>
+  </section>
+
+  <form class="composer" id="taskForm" novalidate>
+    <div class="composer__row">
+      <input type="text" id="taskInput" placeholder="What are you shipping next?" maxlength="140" autocomplete="off">
+      <button type="submit" class="btn btn--ship">Ship it →</button>
+    </div>
+    <div class="composer__meta">
+      <select id="prioritySelect" class="chip-select" aria-label="Priority">
+        <option value="routine" selected>Routine</option>
+        <option value="urgent">Breaking</option>
+        <option value="low">Low priority</option>
+      </select>
+      <input type="date" id="dueInput" class="chip-select" aria-label="Deadline">
+      <div class="quick-date">
+        <button type="button" data-quick="today" aria-pressed="false">Today</button>
+        <button type="button" data-quick="tomorrow" aria-pressed="false">Tomorrow</button>
+        <button type="button" data-quick="week" aria-pressed="false">+1wk</button>
+      </div>
+    </div>
+  </form>
+
+  <nav class="filter-row" role="tablist" aria-label="Filter tasks">
+    <button class="tab" role="tab" data-filter="all" aria-selected="true">All</button>
+    <button class="tab" role="tab" data-filter="active" aria-selected="false">Active</button>
+    <button class="tab" role="tab" data-filter="completed" aria-selected="false">Shipped</button>
+    <div class="search-wrap">
+      <input type="search" id="searchInput" placeholder="Search… ( / )" aria-label="Search tasks">
+    </div>
+  </nav>
+
+  <ul id="taskList" aria-live="polite"></ul>
+
+  <div class="desk__utility">
+    <button type="button" class="link-btn" id="clearCompleted">Clear shipped tasks</button>
+    <div style="display:flex; gap:12px;">
+      <button type="button" class="link-btn" id="exportBtn">Export backup</button>
+      <label class="link-btn" style="cursor:pointer;">
+        Import backup
+        <input type="file" id="importInput" accept="application/json" style="display:none;">
+      </label>
+    </div>
+  </div>
+
+  <section class="analytics" aria-label="Shipping activity, last 7 days">
+    <div class="analytics__head">
+      <span class="analytics__title">Shipping activity</span>
+      <span class="analytics__sub">Last 7 days</span>
+    </div>
+    <div class="spark" id="spark"></div>
+  </section>
+
+  <p class="footer-note">Autosaved locally · Drag to reorder · ⌘K for commands · Click a momentum ring to ship a task</p>
+</div>
+
+<!-- Command palette -->
+<div class="palette-overlay" id="paletteOverlay" hidden>
+  <div class="palette" role="dialog" aria-label="Command palette">
+    <input type="text" class="palette__input" id="paletteInput" placeholder="Type a command or search tasks…" autocomplete="off">
+    <ul class="palette__list" id="paletteList"></ul>
+  </div>
+</div>
+
+<!-- Focus mode / pomodoro sprint -->
+<div class="focus-overlay" id="focusOverlay" hidden>
+  <button class="icon-toggle focus-exit" id="focusExit" aria-label="Exit focus mode">✕</button>
+  <div class="focus-overlay__label">Focus sprint</div>
+  <div class="focus-overlay__task" id="focusTaskLabel">Task</div>
+  <div class="focus-ring-wrap">
+    <svg viewBox="0 0 220 220">
+      <circle class="focus-ring-track" cx="110" cy="110" r="100"></circle>
+      <circle class="focus-ring-progress" id="focusRingProgress" cx="110" cy="110" r="100"></circle>
+    </svg>
+    <div class="focus-time" id="focusTime">25:00</div>
+  </div>
+  <div class="focus-controls">
+    <button class="btn btn--ship" id="focusStartPause" type="button">Start sprint</button>
+    <button class="btn" id="focusReset" type="button">Reset</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<canvas id="confettiCanvas" hidden></canvas>
+
+<script src="js/utils.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

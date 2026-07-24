@@ -1,0 +1,68 @@
+/* ==========================================================================
+   SHIPIT — design tokens
+   A builder's momentum tracker. Aesthetic: deep plum-charcoal workspace
+   (not pure black), an aurora gradient (mint → violet) as the single
+   signature accent, glass panels, and a mono typeface for anything that
+   counts (scores, timers, streaks) — numbers should feel instrumented.
+   ========================================================================== */
+
+:root {
+  --bg-0: #120e18;         /* base workspace, deep plum-charcoal, not pure black */
+  --bg-1: #1a1522;
+  --bg-2: #221b2c;
+  --glass: rgba(255,255,255,0.045);
+  --glass-strong: rgba(255,255,255,0.075);
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.16);
+
+  --text-0: #f5f2fa;
+  --text-1: #c9c1da;
+  --text-2: #8b8299;
+
+  --mint: #00e5a0;
+  --violet: #7b61ff;
+  --aurora: linear-gradient(120deg, var(--mint), var(--violet));
+  --aurora-soft: linear-gradient(120deg, rgba(0,229,160,0.16), rgba(123,97,255,0.16));
+
+  --danger: #ff6b7a;
+  --danger-bg: rgba(255,107,122,0.12);
+  --warn: #ffb24d;
+  --warn-bg: rgba(255,178,77,0.12);
+  --calm: #6fd3ff;
+  --calm-bg: rgba(111,211,255,0.12);
+
+  --shadow-card: 0 1px 0 rgba(255,255,255,0.04) inset, 0 12px 28px -12px rgba(0,0,0,0.55);
+  --shadow-float: 0 20px 60px -16px rgba(0,0,0,0.65);
+  --glow-mint: 0 0 0 1px rgba(0,229,160,0.35), 0 0 24px -4px rgba(0,229,160,0.45);
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+
+  color-scheme: dark;
+}
+
+/* Light "day" mode kept as an alternate, not the default — a startup tool
+   defaults to dark, but should still respect a user who wants light. */
+[data-mode="light"] {
+  --bg-0: #f6f4fb;
+  --bg-1: #ffffff;
+  --bg-2: #ede9f7;
+  --glass: rgba(18,14,24,0.03);
+  --glass-strong: rgba(18,14,24,0.06);
+  --border: rgba(18,14,24,0.09);
+  --border-strong: rgba(18,14,24,0.16);
+
+  --text-0: #17131f;
+  --text-1: #423a54;
+  --text-2: #837997;
+
+  --shadow-card: 0 1px 0 rgba(255,255,255,0.6) inset, 0 12px 28px -14px rgba(30,20,50,0.18);
+  --shadow-float: 0 20px 50px -18px rgba(30,20,50,0.28);
+
+  color-scheme: light;
+}
